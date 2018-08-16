@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+div.app {
+  display: inline;
+  flex-direction: column;
+}
+
+.column {
+  float: left;
+}
+
+.post-container {
+  width: 66%;
+}
+
+.side {
+  width: 33%;
+  outline: 1px dotted green;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 24pt;
+}
+
+.user-description {
+  font-size: 16pt;
+}
+
+.post-title {
+  font-weight: bold;
+  font-size: 32pt;
+}
+
+.box-container {
+  display: inline;
+  outline: 1px dotted red;
+}
+
+.header {
+  position: fixed;
+  background-color: red;
+}
+
+.boxxy {
+  float: left;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.post {
+  outline: 1px dashed blue;
+  margin-bottom: 1;
+}
