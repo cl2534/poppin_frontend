@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import PostContainer from './PostContainer.js';
-import SideBar from './SideBar.js';
-import Header from './Header.js';
+import PostContainer from './Components/PostContainer';
+import SideBar from './Components/SideBar';
+import Header from './Components/Header';
 
 class App extends Component {
   render() {
