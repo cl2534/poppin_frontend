@@ -4,7 +4,7 @@ body {
   font-family: sans-serif;
 }
 
-div.app {
+div.col-container {
   display: inline;
   flex-direction: column;
 }
@@ -46,8 +46,15 @@ div.app {
   background-color: red;
 }
 
+.about-me {
+  outline: 1px dotted pink;
+  display: inline;
+  float: left;
+}
+
 .boxxy {
   float: left;
+  text-align: center;
 }
 
 .section-title {
@@ -58,4 +65,10 @@ div.app {
 .post {
   outline: 1px dashed blue;
   margin-bottom: 1;
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+
 }

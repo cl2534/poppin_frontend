@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import PostContainer from './PostContainer.js';
-import SideBar from './SideBar.js';
-import Header from './Header.js';
+import { BrowserRouter, Route} from 'react-router-dom';
+import HomePage from './components/HomePage.js';
+import UserPage from './components/UserPage.js';
+import StylesPage from './components/StylesPage.js';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Header />
-        <br />
-        <div className="app">
-          <PostContainer />
-          <SideBar />
+      <BrowserRouter>
+        <div className="col-container">
+          <Route path="" component={HomePage} exact/>
+          <Route path="/styles" component={StylesPage} exact/>
+          <Route path="/mypage" component={UserPage} exact/>
         </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }
