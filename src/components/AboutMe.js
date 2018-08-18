@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 export default class AboutMe extends Component {
 
+
   render() {
     return (
       <div className="about-me">
@@ -12,7 +13,7 @@ export default class AboutMe extends Component {
         <div>
           <h2> About Me </h2>
           <p> Student at NYU and Flatiron School </p>
-          <p> IG: @littboi5000 </p>
+          <p> IG: @littybo5000 </p>
           <p> Facebook: facebook.com/littyboi </p>
         </div>
       </div>
