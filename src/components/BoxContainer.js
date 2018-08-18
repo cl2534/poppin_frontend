@@ -3,15 +3,20 @@ import Box from './Box.js';
 
 export default class BoxContainer extends Component {
 
+  constructor(props) {
+    super(props)
+  }
+
   generateBoxes = () => {
-    let counter = 0;
-    let returnArray = [];
-    while (counter < parseInt(this.props.boxCount)) {
-      returnArray.push(<Box />)
-      counter++
+    let returnArray = []
+    for (let styleIndex in this.props.styles) {
+      console.log(this.props.styles[styleIndex]);
+      returnArray.push(<Box key={this.props.styles[styleIndex].id} style={this.props.styles[styleIndex]}/>)
     }
+    console.log(returnArray)
     return returnArray
   }
+
 
   render() {
     return (<div className = "box-container">

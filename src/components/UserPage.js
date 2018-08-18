@@ -11,7 +11,7 @@ export default class UserPage extends Component {
             <Header />
             <br />
             <div >
-              <AboutMe />
+              <AboutMe userId="2"/>
               <br />
               <h2> Recent Posts </h2>
               <PostContainer />
