@@ -31,7 +31,7 @@ export default class UserPage extends Component {
               <AboutMe />
               <br />
               <h2> Recent Posts </h2>
-              <PostContainer user = {this.state.users[0]} />
+              <PostContainer />
             </div>
           </div>
         )
