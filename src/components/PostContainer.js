@@ -9,7 +9,7 @@ export default class PostContainer extends Component{
   renderPosts = () => {
     return this.props.posts.map(post => {
       return (
-      <Post post = {post} />
+      <Post post={post} key={post.id}/>
     )}
     )
   }

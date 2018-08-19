@@ -45,8 +45,8 @@ export default class StylePage extends Component {
         }
       }
       this.setState = {
-        ...allPosts,
-        ...currentPostStyles,
+        ...this.state.allPosts,
+        ...this.state.currentPostStyles,
         thatStylePosts: resultArray
       }
     }
@@ -58,6 +58,7 @@ export default class StylePage extends Component {
     console.log(this.state)
     return (
       <div>
+      <Header />
         Style Page
         <br />
       </div>

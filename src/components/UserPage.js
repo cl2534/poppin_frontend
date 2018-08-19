@@ -18,7 +18,7 @@ export default class UserPage extends Component {
 
   setPosts = (id) => {
     fetch('http://localhost:4000/api/v1/posts').then(res => res.json()).then(json => this.setState({
-      userPosts: json.posts.filter(post => post.user_id == id)
+      userPosts: json.posts.filter(post => post.user_id === id)
     }))
   }
 
