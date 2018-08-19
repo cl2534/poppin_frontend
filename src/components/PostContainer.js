@@ -2,14 +2,23 @@ import React, {Component} from 'react';
 import Post from './Post';
 
 export default class PostContainer extends Component{
-  // state = {}
+  constructor(props) {
+    super(props)
+  }
+
+  renderPosts = () => {
+    return this.props.posts.map(post => {
+      return (
+      <Post post = {post} />
+    )}
+    )
+  }
+
+
   render() {
     return (
       <div className = 'post-container column'>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        {this.renderPosts()}
       </div>
     )
   }
