@@ -4,6 +4,23 @@ import PostContainer from './PostContainer';
 import AboutMe from './AboutMe';
 
 export default class UserPage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      users: []
+    }
+  }
+
+  componentDidMount() {
+    this.fetchUsers()
+    // this.fetchUsers()
+  }
+
+  fetchUsers = () => {
+    fetch('http://localhost:4000/api/v1/users').then(res => res.json()).then(res => this.setState({
+      users: res.users
+    }))
+  }
 
   state = {
     currentUser: {}

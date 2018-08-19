@@ -19,3 +19,12 @@ class App extends Component {
 }
 
 export default App;
+
+/*
+App - HomePage  - SideBar -BoxContainer - Box
+                - PostContainer - Post - UserBlurb
+    - UserPage  - PostContainer - Post - UserBlurb
+    - StylesPage -BoxContainer - Box
+    - StylePage - PostContainer -Post - UserBlurb
+
+    */
