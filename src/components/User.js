@@ -43,7 +43,6 @@ export default class User extends Component{
 
 
   render() {
-    console.log(this.state.currentUser.name)
     return (
       <div className = 'user'>
         <div className='user-name'> {this.state.currentUser.name} </div>

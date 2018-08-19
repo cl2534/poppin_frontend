@@ -4,31 +4,21 @@ import PostContainer from './PostContainer';
 import AboutMe from './AboutMe';
 
 export default class UserPage extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      users: []
-    }
-  }
-
-  componentDidMount() {
-    this.fetchUsers()
-    // this.fetchUsers()
-  }
-
-  fetchUsers = () => {
-    fetch('http://localhost:4000/api/v1/users').then(res => res.json()).then(res => this.setState({
-      users: res.users
-    }))
-  }
 
   state = {
-    currentUser: {}
+    currentUser: {},
+    userPosts: []
   }
 
   setUser = () => {
-    fetch('http://localhost:4000/api/v1/users/2').then(res => res.json()).then(json => this.setState({
+    fetch('http://localhost:4000/api/v1/users/1').then(res => res.json()).then(json => {this.setState({
       currentUser: json.user
+    }); return json.user.id}).then(user_id => this.setPosts(user_id))
+  }
+
+  setPosts = (id) => {
+    fetch('http://localhost:4000/api/v1/posts').then(res => res.json()).then(json => this.setState({
+      userPosts: json.posts.filter(post => post.user_id == id)
     }))
   }
 
@@ -44,7 +34,7 @@ export default class UserPage extends Component {
             <div >
               <AboutMe user={this.state.currentUser}/>
               <br />
-              <PostContainer />
+              <PostContainer posts={this.state.userPosts}/>
             </div>
           </div>
         )
