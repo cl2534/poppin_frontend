@@ -7,11 +7,17 @@ export default class BoxContainer extends Component {
     super(props)
   }
 
+  handleClick = () => {
+
+  }
+
   generateBoxes = () => {
     let returnArray = []
     for (let styleIndex in this.props.styles) {
       console.log(this.props.styles[styleIndex]);
-      returnArray.push(<Box key={this.props.styles[styleIndex].id} style={this.props.styles[styleIndex]}/>)
+      returnArray.push(<Box key={this.props.styles[styleIndex].id} style={this.props.styles[styleIndex]}
+      handleClick = {this.handleClick}
+        />)
     }
     console.log(returnArray)
     return returnArray
