@@ -55,6 +55,7 @@ div.col-container {
 .boxxy {
   float: left;
   text-align: center;
+  position: relative;
 }
 
 .section-title {
@@ -69,6 +70,7 @@ div.col-container {
 
 .center-text {
   position: absolute;
+  background-color: white;
   top: 50%;
-
+  left: 40%;
 }
