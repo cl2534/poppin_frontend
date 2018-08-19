@@ -12,9 +12,13 @@ export default class Post extends Component{
     return (
 
       <div className = 'post'>
-        <User userId = {this.props.post.user_id}/>
+        <div>
+          <User userId = {this.props.post.user_id}/>
+        </div>
         <div className="post-title"> {this.props.post.name} </div>
-        <img src ='https://vignette.wikia.nocookie.net/blogclan-2/images/4/45/Random-turtle.gif/revision/latest?cb=20160706220110' width = '400' height = '400' />
+        <div className="post-address"> {this.props.post.location} </div>
+        <img src ={this.props.post.picture_url} width = '400' height = '400' />
+        <br />
         <button className="post-button"> Save </button>
         <button className="post-button"> Upvote </button>
 
