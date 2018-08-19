@@ -2,19 +2,36 @@ import React, { Component } from 'react';
 
 export default class AboutMe extends Component {
 
+  constructor(props) {
+    super(props)
+  }
+
+  generateSocialMedia = () => {
+    let returnElements = []
+
+    if (this.props.user.instagram_username !== "") {
+      returnElements.push(<div key={this.props.user.instagram_username}> <img src="https://cdn3.iconfinder.com/data/icons/transparent-on-dark-grey/500/icon-04-512.png" width="25" height="25" alt=""/> @{this.props.user.instagram_username} </div>)
+    }
+
+    if (this.props.user.facebook_url !== "") {
+      returnElements.push(<div key={this.props.user.facebook_url}> <img src="https://image.flaticon.com/icons/png/512/69/69407.png" width="25" height="25" alt=""/> {this.props.user.facebook_url} </div>)
+    }
+
+    return returnElements
+  }
+
 
   render() {
     return (
       <div className="about-me">
         <div>
-          <h1> Changmin Lim </h1>
-          <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/18403265_10208991844731246_700286398823467789_n.jpg?_nc_cat=0&oh=bad6b60c50624f0519dab820a8930ab8&oe=5C12056B" height="250" width="250" />
+          <h1> {this.props.user.name} </h1>
+          <img src={this.props.user.profile_img_link} height="250" width="250" />
         </div>
         <div>
-          <h2> About Me </h2>
-          <p> Student at NYU and Flatiron School </p>
-          <p> IG: @littybo5000 </p>
-          <p> Facebook: facebook.com/littyboi </p>
+          <p> {this.props.user.address} </p>
+          <p> {this.props.user.about_me} </p>
+          {this.generateSocialMedia()}
         </div>
       </div>
     )

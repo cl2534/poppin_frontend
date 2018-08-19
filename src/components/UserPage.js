@@ -5,15 +5,28 @@ import AboutMe from './AboutMe';
 
 export default class UserPage extends Component {
 
+  state = {
+    currentUser: {}
+  }
+
+  setUser = () => {
+    fetch('http://localhost:4000/api/v1/users/2').then(res => res.json()).then(json => this.setState({
+      currentUser: json.user
+    }))
+  }
+
+  componentDidMount() {
+    this.setUser()
+  }
+
   render() {
     return (
           <div>
             <Header />
             <br />
             <div >
-              <AboutMe userId="2"/>
+              <AboutMe user={this.state.currentUser}/>
               <br />
-              <h2> Recent Posts </h2>
               <PostContainer />
             </div>
           </div>
