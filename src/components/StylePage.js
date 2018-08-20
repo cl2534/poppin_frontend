@@ -16,11 +16,13 @@ export default class StylePage extends Component {
   componentDidMount() {
     this.getPostStyle();
     this.getAllPosts();
-    this.filterPosts();
+    // this.filterPosts();
   }
 
   getPostStyle = () => {
+    console.log("top:", this);
     fetch('http://localhost:4000/api/v1/post_styles').then(res => res.json()).then(json => {
+      console.log(json, "this:", this);
       this.setState({
         currentPostStyles: json.poststyles.filter(poststyle => poststyle.style_id === 1)
       })
