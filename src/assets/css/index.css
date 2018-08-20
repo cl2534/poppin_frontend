@@ -44,6 +44,8 @@ div.col-container {
 .header {
   position: fixed;
   background-color: red;
+  width: 100%;
+  z-index: 1;
 }
 
 .about-me {
@@ -90,4 +92,10 @@ div.col-container {
 
 .avatar{
   border-radius: 50%;
+}
+
+.header-element{
+  font-color: blue;
+  display: inline;
+  margin-left: 25%;
 }

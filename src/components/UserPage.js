@@ -23,7 +23,6 @@ export default class UserPage extends Component {
     }
     else {
       let otherUserOnNetworkId = window.location.href.split('/').slice(-1)
-      console.log(otherUserOnNetworkId);
       fetch('http://localhost:4000/api/v1/users/' + otherUserOnNetworkId).then(res => res.json()).then(json => {this.setState({
         currentUser: json.user
       }); return json.user.id}).then(user_id => this.setPosts(user_id))
@@ -41,7 +40,6 @@ export default class UserPage extends Component {
   }
 
   render() {
-    console.log(window.location.href)
     return (
           <div>
             <Header />

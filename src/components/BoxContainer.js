@@ -14,9 +14,13 @@ export default class BoxContainer extends Component {
   }
 
   generateBoxes = () => {
+    if (this.props.styles == []) {
+      return null
+    }
     let returnArray = []
     for (let styleIndex in this.props.styles) {
-      returnArray.push(<Box key={this.props.styles[styleIndex].id} id = {this.props.styles[styleIndex].id} style={this.props.styles[styleIndex]}
+      let generatedKey = (this.props.styles[styleIndex].id.toString() + '-' + Math.random().toString())
+      returnArray.push(<Box key={generatedKey} id = {this.props.styles[styleIndex].id} style={this.props.styles[styleIndex]}
       handleClick = {this.handleClick}
         />)
     }
