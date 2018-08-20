@@ -5,13 +5,20 @@ import UserPage from './components/UserPage.js';
 import StylesPage from './components/StylesPage.js';
 
 class App extends Component {
+
+  state = {
+    loggedInUserId: 2
+  }
+
+
   render() {
     return (
       <BrowserRouter>
         <div className="col-container">
           <Route path="" component={HomePage} exact/>
           <Route path="/styles" component={StylesPage} exact/>
-          <Route path="/mypage" component={UserPage} exact/>
+          <Route path="/MyPage" render={(props) => <UserPage {...props} userId={this.state.loggedInUserId}/>} exact/>
+          <Route path="/user" render={(props) => <UserPage {...props} userId={this.state.loggedInUserId}/>} />
         </div>
       </BrowserRouter>
     );

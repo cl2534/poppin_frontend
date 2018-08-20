@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 
 export default class User extends Component{
@@ -45,8 +46,13 @@ export default class User extends Component{
   render() {
     return (
       <div className = 'user'>
-        <div className='user-name'> {this.state.currentUser.name} </div>
-        <div className='user-description'> Description <button>Fan</button> </div>
+        <img className ='user-text avatar'alt="" src={this.state.currentUser.profile_img_link} height="75" width="75"/>
+        <div>
+          <Link className='user-text user-name' to={"/user/" + this.state.currentUser.id} params={{userId: this.state.currentUser.id}}> {this.state.currentUser.name} </Link>
+          <br />
+          <br />
+          <div className='user-text user-description'> {this.state.currentUser.about_me} <button>Fan</button> </div>
+        </div>
       </div>
     )
   }
