@@ -4,7 +4,7 @@ import HomePage from './components/HomePage.js';
 import UserPage from './components/UserPage.js';
 import StylesPage from './components/StylesPage.js';
 import NewPostPage from './components/NewPostPage.js';
-
+import StylePage from './components/StylePage.js';
 class App extends Component {
 
   state = {
@@ -21,7 +21,6 @@ class App extends Component {
           <Route path="/MyPage" render={(props) => <UserPage {...props} userId={this.state.loggedInUserId}/>} exact/>
           <Route path="/user" render={(props) => <UserPage {...props} userId={this.state.loggedInUserId}/>} />
           <Route path="/new-post" render={(props) => <NewPostPage {...props} userId={this.state.loggedInUserId} />} />
-          
         </div>
       </BrowserRouter>
     );
