@@ -21,6 +21,7 @@ class App extends Component {
           <Route path="/MyPage" render={(props) => <UserPage {...props} userId={this.state.loggedInUserId}/>} exact/>
           <Route path="/user" render={(props) => <UserPage {...props} userId={this.state.loggedInUserId}/>} />
           <Route path="/new-post" render={(props) => <NewPostPage {...props} userId={this.state.loggedInUserId} />} />
+          
         </div>
       </BrowserRouter>
     );
