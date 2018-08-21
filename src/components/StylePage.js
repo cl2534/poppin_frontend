@@ -7,51 +7,21 @@ export default class StylePage extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentPostStyles : [],
-      allPosts: [],
-      thatStylePosts: []
+      stylePosts: []
     }
   }
 
   componentDidMount() {
-    this.getPostStyle();
-    this.getAllPosts();
-    // this.filterPosts();
+    this.getStyles()
   }
 
-  getPostStyle = () => {
-    console.log("top:", this);
-    fetch('http://localhost:4000/api/v1/post_styles').then(res => res.json()).then(json => {
-      console.log(json, "this:", this);
+  getStyles = (style_id) => {
+    fetch(`http://localhost:4000/api/v1/styles/${style_id}`).then(res => res.json()).then(json => {
       this.setState({
-        currentPostStyles: json.poststyles.filter(poststyle => poststyle.style_id === 1)
+        stylePosts: json.posts
       })
     })
   }
-
-  getAllPosts = () => {
-    fetch('http://localhost:4000/api/v1/posts').then(res => res.json()).then(res => {
-      this.setState({
-        allPosts: res.posts
-      })
-    })
-  }
-
-    filterPosts = () => {
-      let resultArray = []
-      for (let i = 0; i < this.state.currentPostStyles.length; i++) {
-        for (let j = 0; j < this.state.allPosts.length; j++) {
-          if (this.state.currentPostStyles[i].post_id === this.state.allPosts[j].id) {
-            resultArray.push(this.state.allPosts[i])
-          }
-        }
-      }
-      this.setState = {
-        ...this.state.allPosts,
-        ...this.state.currentPostStyles,
-        thatStylePosts: resultArray
-      }
-    }
 
 
 

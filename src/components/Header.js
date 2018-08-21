@@ -16,6 +16,7 @@ export default class Header extends Component {
       <Link className='header-element' to="/"> Home </Link>
       <Link className='header-element' to="/MyPage"> My Profile </Link>
       <Link className='header-element' to="/styles"> Explore Styles </Link>
+      <Link className='header-element' to="/new-post"> Make a Post </Link>
     </nav>)
   }
 }
