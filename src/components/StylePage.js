@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import BoxContainer from './BoxContainer'
-
+import Post from './Post'
 export default class StylePage extends Component {
 
   constructor(props) {
@@ -24,15 +24,22 @@ export default class StylePage extends Component {
   }
 
 
+  renderPosts = () => {
+    return this.state.stylePosts.map(post => {
+      return (
+      <Post post={post} key={post.id}/>
+    )}
+    )
+  }
 
 
   render() {
-    console.log(this.state)
     return (
       <div>
       <Header />
-        Style Page
-        <br />
+      <div className = 'post-container column'>
+        {this.renderPosts()}
+      </div>
       </div>
     )
   }
