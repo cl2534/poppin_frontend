@@ -5,16 +5,34 @@ export default class Post extends Component{
   // state = {}
   constructor(props) {
     super(props)
+
+    this.state = {
+      likes: props.post.likes,
+      likedAlready: false
+    }
   }
 
   handleLikeClick = () => {
+    console.log(this.props.post.likes, "u just liked tho!")
     fetch('http://localhost:4000/api/v1/posts/' + this.props.post.id, {
       method: 'PATCH',
       headers: {
         'Content-Type':'application/json'
       },
-      body: JSON.stringify({likes: this.props.post.likes++})
-    })
+      body: JSON.stringify({likes: this.props.post.likes + 1})
+    }).then(res => res.json()).then(json => this.setState({
+      likes: this.props.post.likes++,
+      likedAlready: true
+    }))
+  }
+
+  generateLikeButton = () => {
+    if (!this.state.likedAlready) {
+      return <button className="post-button" onClick={this.handleLikeClick}> Likes: {this.props.post.likes} </button>
+    }
+    else {
+      return <button className="post-button" onClick={this.handleLikeClick} disabled> Likes: {this.props.post.likes} </button>
+    }
   }
 
 
@@ -30,7 +48,7 @@ export default class Post extends Component{
         <img src ={this.props.post.picture_url}/>
         <br />
         <button className="post-button"> Save </button>
-        <button className="post-button" onClick={this.handleLikeClick}> Likes: {this.props.post.likes} </button>
+        {this.generateLikeButton()}
 
       </div>
     )
