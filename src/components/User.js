@@ -30,7 +30,7 @@ export default class User extends Component{
           <Link className='user-text user-name' to={"/user/" + this.state.currentUser.id} params={{userId: this.state.currentUser.id}}> {this.state.currentUser.name} </Link>
           <br />
           <br />
-          <div className='user-text user-description'> {this.state.currentUser.about_me} <button>Fan</button> </div>
+          <div className='user-text user-description'> {this.state.currentUser.about_me} </div>
         </div>
       </div>
     )

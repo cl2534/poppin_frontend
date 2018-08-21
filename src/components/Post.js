@@ -77,7 +77,6 @@ export default class Post extends Component{
           <div className="post-address"> {this.props.post.location} </div>
           <img src ={this.props.post.picture_url}/>
           <br />
-          <button className="post-button"> Save </button>
           {this.generateLikeButton()}
         </div>
       </div>
