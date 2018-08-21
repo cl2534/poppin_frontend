@@ -8,7 +8,7 @@ import NewPostPage from './components/NewPostPage.js';
 class App extends Component {
 
   state = {
-    loggedInUserId: 2
+    loggedInUserId: 5
   }
 
 
