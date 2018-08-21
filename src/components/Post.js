@@ -35,6 +35,33 @@ export default class Post extends Component{
     }
   }
 
+  generateArticles = () => {
+    if (this.props.post.articles.length == 0) {
+      return null
+    }
+    else {
+      let articleArray = this.props.post.articles.split(",")
+      let returnArray = []
+      for (let article in articleArray) {
+        returnArray.push(<li> {articleArray[article]} </li>)
+      }
+      return <ul className="right-list">Listed Clothing: {returnArray} </ul>
+    }
+  }
+
+  generateStyles = () => {
+    if (this.props.post.styles.length == 0) {
+      return null
+    }
+    else {
+      let returnArray = []
+      for (let style in this.props.post.styles) {
+        returnArray.push(<li> {this.props.post.styles[style].name} </li>)
+      }
+      return <ul className="right-list">Associated Styles: {returnArray} </ul>
+    }
+  }
+
 
   render() {
     return (
@@ -43,13 +70,16 @@ export default class Post extends Component{
         <div>
           <User userId = {this.props.post.user_id}/>
         </div>
-        <div className="post-title"> {this.props.post.name} </div>
-        <div className="post-address"> {this.props.post.location} </div>
-        <img src ={this.props.post.picture_url}/>
-        <br />
-        <button className="post-button"> Save </button>
-        {this.generateLikeButton()}
-
+        {this.generateArticles()}
+        {this.generateStyles()}
+        <div>
+          <div className="post-title"> {this.props.post.name} </div>
+          <div className="post-address"> {this.props.post.location} </div>
+          <img src ={this.props.post.picture_url}/>
+          <br />
+          <button className="post-button"> Save </button>
+          {this.generateLikeButton()}
+        </div>
       </div>
     )
   }

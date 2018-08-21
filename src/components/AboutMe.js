@@ -10,11 +10,11 @@ export default class AboutMe extends Component {
     let returnElements = []
 
     if (this.props.user.instagram_username !== "") {
-      returnElements.push(<div key={this.props.user.instagram_username}> <img src="https://cdn3.iconfinder.com/data/icons/transparent-on-dark-grey/500/icon-04-512.png" width="25" height="25" alt=""/> @{this.props.user.instagram_username} </div>)
+      returnElements.push(<div className="social-media-icon" key={this.props.user.instagram_username}> <img src="https://cdn3.iconfinder.com/data/icons/transparent-on-dark-grey/500/icon-04-512.png" width="25" height="25" alt=""/> @{this.props.user.instagram_username} </div>)
     }
 
     if (this.props.user.facebook_url !== "") {
-      returnElements.push(<div key={this.props.user.facebook_url}> <img src="https://image.flaticon.com/icons/png/512/69/69407.png" width="25" height="25" alt=""/> {this.props.user.facebook_url} </div>)
+      returnElements.push(<div className="social-media-icon" key={this.props.user.facebook_url}> <img src="https://image.flaticon.com/icons/png/512/69/69407.png" width="25" height="25" alt=""/> {this.props.user.facebook_url} </div>)
     }
 
     return returnElements

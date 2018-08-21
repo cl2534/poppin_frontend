@@ -99,3 +99,12 @@ div.col-container {
   display: inline;
   margin-left: 15%;
 }
+
+.right-list {
+  float: right;
+  margin-right: 10px;
+}
+
+.style-image {
+  filter: brightness(75%);
+}
