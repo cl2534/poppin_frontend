@@ -9,7 +9,7 @@ export default class PostContainer extends Component{
   renderPosts = () => {
     return this.props.posts.map(post => {
       return (
-      <Post post={post} key={post.id}/>
+      <Post post={post} key={post.id} renderStyles={this.props.renderStyles}/>
     )}
     )
   }
@@ -22,4 +22,9 @@ export default class PostContainer extends Component{
       </div>
     )
   }
+}
+
+PostContainer.defaultProps = {
+  posts: [],
+  renderStyles: true
 }

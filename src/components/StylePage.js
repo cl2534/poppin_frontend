@@ -1,35 +1,43 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import BoxContainer from './BoxContainer'
-import Post from './Post'
+import PostContainer from './PostContainer'
 export default class StylePage extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      stylePosts: []
+      style: {},
+      postsOfStyle: []
     }
   }
 
   componentDidMount() {
-    this.getStyles(this.props.styleId)
+    this.setStyle()
   }
 
-  getStyles = (style_id) => {
-    fetch(`http://localhost:4000/api/v1/styles/${style_id}`).then(res => res.json()).then(json => {
+  getStylePosts = (style_id) => {
+    fetch(`http://localhost:4000/api/v1/styles/` + this.state.style.id).then(res => res.json()).then(json => {
       this.setState({
-        stylePosts: json
+        postsOfStyle: json.posts
       })
     })
   }
 
+  setStyle = () => {
+    let thisPagesStyleId = window.location.href.split('/').slice(-1)
+    fetch('http://localhost:4000/api/v1/styles/' + thisPagesStyleId).then(res => res.json()).then(json => {this.setState({
+      style: json
+    }); return json.id}).then(id => this.getStylePosts(id))
+  }
+
 
   renderPosts = () => {
-    return this.state.stylePosts.map(post => {
-      return (
-      <Post post={post} key={post.id}/>
-    )}
-    )
+    if (this.state.postsOfStyle.length == 0) {
+      return <h2> Sorry, this style does not have any posts associated with it yet! </h2>
+    }
+    else {
+      return <PostContainer posts={this.state.postsOfStyle} renderStyles={false} />
+    }
   }
 
 
@@ -38,6 +46,9 @@ export default class StylePage extends Component {
     return (
       <div>
       <Header />
+      <br />
+      <br />
+      <h1>{this.state.style.name} </h1>
       <div className = 'post-container column'>
         {this.renderPosts()}
       </div>

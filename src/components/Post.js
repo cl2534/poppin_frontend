@@ -50,15 +50,17 @@ export default class Post extends Component{
   }
 
   generateStyles = () => {
-    if (this.props.post.styles.length == 0) {
-      return null
-    }
-    else {
-      let returnArray = []
-      for (let style in this.props.post.styles) {
-        returnArray.push(<li> {this.props.post.styles[style].name} </li>)
+    if (this.props.renderStyles) {
+      if (this.props.post.styles.length == 0) {
+        return null
       }
-      return <ul className="right-list">Associated Styles: {returnArray} </ul>
+      else {
+        let returnArray = []
+        for (let style in this.props.post.styles) {
+          returnArray.push(<li> {this.props.post.styles[style].name} </li>)
+        }
+        return <ul className="right-list">Associated Styles: {returnArray} </ul>
+      }
     }
   }
 
