@@ -24,10 +24,10 @@ export default class HomePage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="black">
         <Header />
         <br />
-        <div>
+        <div className="flex-container">
           <PostContainer posts = {this.state.posts}/>
           <SideBar  />
         </div>

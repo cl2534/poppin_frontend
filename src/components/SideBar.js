@@ -37,13 +37,14 @@ export default class SideBar extends Component {
 
 
   render() {
-    return (<div className = "side column">
+    return (<div className = "side column side-bar">
               <div className="section-title"> Spotlight </div>
               <BoxContainer styles={this.giveRandomStyles(4)}/> <br />
               <div className="section-title"> Trending </div>
               <BoxContainer styles={this.giveRandomStyles(4)}/> <br />
               <div className="section-title"> Styles </div>
               <BoxContainer styles={this.giveRandomStyles(4)}/> <br />
+
             </div>
     )
   }

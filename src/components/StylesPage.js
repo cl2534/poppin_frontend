@@ -16,7 +16,7 @@ export default class StylesPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="black">
         <Header />
         <br />
         <BoxContainer styles={this.state.styles}/>

@@ -11,7 +11,7 @@ export default class Box extends Component {
     console.log(this.props)
     return (<div className="boxxy">
       <Link to={"/style/" + this.props.style.id} >
-        <img className="style-image" src={this.props.style.style_pic_link} height="200" width="200" alt="" onClick = {this.props.handleClick(this.props.id)}/>
+        <img className="style-image" src={this.props.style.style_pic_link} height="200" width="200" alt=""/>
         <div className="center-text"> {this.props.style.name}  </div>
       </Link>
     </div>)

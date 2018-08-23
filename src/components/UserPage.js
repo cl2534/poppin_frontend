@@ -16,7 +16,7 @@ export default class UserPage extends Component {
 
 
   setUser = () => {
-    if (window.location.href.includes("MyPage")) {
+    if (window.location.href.includes("my-page")) {
       fetch('http://localhost:4000/api/v1/users/' + this.props.userId).then(res => res.json()).then(json => {this.setState({
         currentUser: json.user
       }); return json.user.id}).then(user_id => this.setPosts(user_id))
@@ -41,10 +41,10 @@ export default class UserPage extends Component {
 
   render() {
     return (
-          <div>
+          <div className="black">
             <Header />
             <br />
-            <div >
+            <div className="flex-container">
               <AboutMe user={this.state.currentUser}/>
               <br />
               <PostContainer posts={this.state.userPosts}/>

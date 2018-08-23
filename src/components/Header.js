@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import { Navbar } from 'react-bootstrap';
 
 export default class Header extends Component {
 
@@ -12,11 +13,17 @@ export default class Header extends Component {
   // }
 
   render() {
-    return (<nav className="header">
-      <Link className='header-element' to="/"> Home </Link>
-      <Link className='header-element' to="/MyPage"> My Profile </Link>
-      <Link className='header-element' to="/styles"> Explore Styles </Link>
-      <Link className='header-element' to="/new-post"> Make a Post </Link>
-    </nav>)
+    return (
+      <Navbar className="navbar default fixed-top header">
+        <Navbar.Header>
+          <Navbar.Brand>
+            <Link className='header-element' to="/"> P🍩ppn </Link>
+          </Navbar.Brand>
+        </Navbar.Header>
+
+        <Link className='header-element' to="/my-page"> My Profile </Link>
+        <Link className='header-element' to="/styles"> Explore Styles </Link>
+        <Link className='header-element' to="/new-post"> Make a Post </Link>
+      </Navbar>)
   }
 }

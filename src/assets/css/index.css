@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #58A4B0;
+}
+
+div {
+  background-color: #58A4B0;
 }
 
 div.col-container {
@@ -14,17 +22,22 @@ div.col-container {
 }
 
 .post-container {
-  width: 66%;
+  width: 70.5%;
 }
 
 .side {
-  width: 33%;
-  outline: 1px dotted green;
+  width: 29.5%;
+  outline: 3px solid #1B1B1E;
 }
 
 .user-name {
   font-weight: bold;
   font-size: 20pt;
+  color: #373F51
+}
+
+.style-text {
+  color: #373F51
 }
 
 .user-description {
@@ -38,26 +51,32 @@ div.col-container {
 
 .box-container {
   display: inline;
-  outline: 1px dotted red;
+  width: 100%;
 }
 
-.header {
+.container {
+  background-color: #1B1B1E;
+}
+
+.fixed {
+  top: 0;
   position: fixed;
-  background-color: red;
   width: 100%;
   z-index: 1;
 }
 
 .about-me {
-  outline: 1px dotted pink;
   display: inline;
   float: left;
+  width: 29.5%;
+  outline: 3px solid #1B1B1E;
 }
 
 .boxxy {
   float: left;
   text-align: center;
   position: relative;
+  outline: 3px solid #1B1B1E;
 }
 
 .section-title {
@@ -66,9 +85,10 @@ div.col-container {
 }
 
 .post {
-  outline: 1px dashed blue;
   margin-bottom: 1;
-
+  padding-top: 15px;
+  padding-bottom: 15px;
+  outline: 3px solid #1B1B1E;
 }
 
 .center-text {
@@ -76,6 +96,7 @@ div.col-container {
   color: white;
   top: 50%;
   left: 40%;
+  background: transparent;
 }
 
 .post-location {
@@ -92,7 +113,14 @@ div.col-container {
 
 .avatar{
   border-radius: 50%;
+  margin-right: 15px;
 }
+
+.header {
+  width: 100%;
+  background-color: #1B1B1E;
+}
+
 
 .header-element{
   font-color: blue;
@@ -103,8 +131,62 @@ div.col-container {
 .right-list {
   float: right;
   margin-right: 10px;
+  margin-left: 10px;
+  list-style: none;
 }
 
 .style-image {
   filter: brightness(75%);
+}
+
+
+.base-div {
+  width: 100%;
+  height: 100%;
+}
+
+.bottom-right {
+  float: right;
+  height: 100%;
+}
+
+html {
+  background: #373F51;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.like-button {
+  height: 50%;
+}
+
+div.side-bar {
+  background-color: #58A4B0;
+  border-top: 100px;
+  width: 32.4%;
+}
+
+.top-header-padding {
+  width: 100%;
+  height: 40px;
+  background-color: #58A4B0;
+}
+
+.post-inner {
+  padding-left: 10px;
+}
+
+.black {
+  background-color: #1B1B1E;
+}
+
+.navbar-header {
+  background-color: #1B1B1E;
+}
+
+a {
+  color: #373F51
 }

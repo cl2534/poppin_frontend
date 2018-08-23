@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import User from './User';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default class Post extends Component{
   // state = {}
@@ -13,7 +15,6 @@ export default class Post extends Component{
   }
 
   handleLikeClick = () => {
-    console.log(this.props.post.likes, "u just liked tho!")
     fetch('http://localhost:4000/api/v1/posts/' + this.props.post.id, {
       method: 'PATCH',
       headers: {
@@ -28,10 +29,10 @@ export default class Post extends Component{
 
   generateLikeButton = () => {
     if (!this.state.likedAlready) {
-      return <button className="post-button" onClick={this.handleLikeClick}> Likes: {this.props.post.likes} </button>
+      return <Button bsStyle="danger" className="right-list like-button" onClick={this.handleLikeClick}> Likes: {this.props.post.likes} </Button>
     }
     else {
-      return <button className="post-button" onClick={this.handleLikeClick} disabled> Likes: {this.props.post.likes} </button>
+      return <Button bsStyle="danger" className="right-list like-button" onClick={this.handleLikeClick} disabled> Likes: {this.props.post.likes} </Button>
     }
   }
 
@@ -57,7 +58,7 @@ export default class Post extends Component{
       else {
         let returnArray = []
         for (let style in this.props.post.styles) {
-          returnArray.push(<li> {this.props.post.styles[style].name} </li>)
+          returnArray.push(<Link className="style-text" to={"/style/" + this.props.post.styles[style].id}> <li> {this.props.post.styles[style].name} </li> </Link>)
         }
         return <ul className="right-list">Associated Styles: {returnArray} </ul>
       }
@@ -69,17 +70,19 @@ export default class Post extends Component{
     return (
 
       <div className = 'post'>
-        <div>
-          <User userId = {this.props.post.user_id}/>
-        </div>
-        {this.generateArticles()}
-        {this.generateStyles()}
-        <div>
-          <div className="post-title"> {this.props.post.name} </div>
-          <div className="post-address"> {this.props.post.location} </div>
-          <img src ={this.props.post.picture_url}/>
-          <br />
-          {this.generateLikeButton()}
+        <div className = 'post-inner'>
+          <div className="flex-container">
+            <User className="user-blurb" userId = {this.props.post.user_id} />
+            {this.generateLikeButton()}
+          </div>
+          {this.generateArticles()}
+          {this.generateStyles()}
+          <div>
+            <div className="post-title"> {this.props.post.name} </div>
+            <div className="post-address"> {this.props.post.location} </div>
+            <img src ={this.props.post.picture_url}/>
+            <br />
+          </div>
         </div>
       </div>
     )

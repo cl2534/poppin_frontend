@@ -35,22 +35,22 @@ export default class NewPostPage extends Component {
 
   render() {
     return (
-      <div className="form-contianer">
+      <div className="form-container black">
         <Header />
         <br />
         <div className="create-post-form">
           <form onSubmit={this.handleSubmit}>
             <label>Post Title: </label>
-            <input type="text" name="name" size="80" value={this.state.name} onChange={this.handleChange}/>
+            <input type="text" name="name" size="80" value={this.state.name} onChange={this.handleChange} maxlength="100"/>
             <br />
             <label>Post Location: </label>
-            <input type="text" name="location" size="75" value={this.state.location} onChange={this.handleChange}/>
+            <input type="text" name="location" size="75" value={this.state.location} onChange={this.handleChange} maxlength="30"/>
             <br />
             <label>Post Image URL: </label>
-            <input type="text" name="picture_url" size="73" value={this.state.picture_url} onChange={this.handleChange}/>
+            <input type="URL" name="picture_url" size="73" value={this.state.picture_url} onChange={this.handleChange} maxlength="200"/>
             <br />
             <label>Outfit Articles (optional): </label>
-            <input type="text" name="articles" size="60" value={this.state.articles} onChange={this.handleChange}/>
+            <input type="text" name="articles" size="60" value={this.state.articles} onChange={this.handleChange} maxlength="140"/>
             <br />
             <input type="submit" value="Submit" />
           </form>
