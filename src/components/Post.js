@@ -15,7 +15,7 @@ export default class Post extends Component{
   }
 
   handleLikeClick = () => {
-    fetch('http://localhost:4000/api/v1/posts/' + this.props.post.id, {
+    fetch('https://young-waters-32129.herokuapp.com/api/v1/posts/' + this.props.post.id, {
       method: 'PATCH',
       headers: {
         'Content-Type':'application/json'

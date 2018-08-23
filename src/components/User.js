@@ -16,7 +16,7 @@ export default class User extends Component{
   }
 
   fetchUser = (user_id) => {
-    fetch(`http://localhost:4000/api/v1/users/` + this.props.userId).then(res => res.json()).then(res => this.setState({
+    fetch(`https://young-waters-32129.herokuapp.com/api/v1/users/` + this.props.userId).then(res => res.json()).then(res => this.setState({
       currentUser: res.user
     }))
   }

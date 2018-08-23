@@ -24,7 +24,7 @@ export default class NewPostPage extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    fetch('http://localhost:4000/api/v1/posts', {
+    fetch('https://young-waters-32129.herokuapp.com/api/v1/posts', {
       method: 'POST',
       headers: {
         'Content-Type':'application/json'

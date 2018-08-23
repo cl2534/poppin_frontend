@@ -16,7 +16,7 @@ export default class Adapter extends Component {
 
   updateScore = () => {
     let bodyJSON = {name: "Sang", profile_img_link: 'wded'}
-    fetch(`http://localhost:3000/api/v1/users/1`, {
+    fetch(`https://young-waters-32129.herokuapp.com/api/v1/users/1`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ export default class Adapter extends Component {
 
     createUser = () => {
         let bodyJSON = {name: "Chang", profile_img_link: 'www.flatironschool.com'}
-        fetch(`http://localhost:3000/api/v1/users`, {
+        fetch(`https://young-waters-32129.herokuapp.com/api/v1/users`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ export default class Adapter extends Component {
     }
 
   fetchUsers = () => {
-    fetch(`http://localhost:3000/api/v1/users`).then(res => res.json()).then(data => console.log(data));
+    fetch(`https://young-waters-32129.herokuapp.com/api/v1/users`).then(res => res.json()).then(data => console.log(data));
         // our backend responds with the updated note instance represented as JSON
   }
 }

@@ -16,7 +16,7 @@ export default class StylePage extends Component {
   }
 
   getStylePosts = (style_id) => {
-    fetch(`http://localhost:4000/api/v1/styles/` + this.state.style.id).then(res => res.json()).then(json => {
+    fetch(`https://young-waters-32129.herokuapp.com/api/v1/styles/` + this.state.style.id).then(res => res.json()).then(json => {
       this.setState({
         postsOfStyle: json.posts
       })

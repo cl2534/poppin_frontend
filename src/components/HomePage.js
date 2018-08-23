@@ -15,7 +15,7 @@ export default class HomePage extends Component {
   }
 
   fetchFiveRecentPosts = () => {
-    fetch('http://localhost:4000/api/v1/posts').then(res => res.json()).then(res => this.setState({
+    fetch('https://young-waters-32129.herokuapp.com/api/v1/posts').then(res => res.json()).then(res => this.setState({
       posts: res.posts.slice(Math.max(-5))
     }))
   }
