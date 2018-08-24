@@ -8,7 +8,7 @@ import StylePage from './components/StylePage.js';
 class App extends Component {
 
   state = {
-    loggedInUserId: 3
+    loggedInUserId: 2
   }
 
 

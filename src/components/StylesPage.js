@@ -19,7 +19,9 @@ export default class StylesPage extends Component {
       <div className="black">
         <Header />
         <br />
-        <BoxContainer styles={this.state.styles}/>
+        <div className="center-this-box">
+          <BoxContainer styles={this.state.styles}/>
+        </div>
       </div>
     )
   }
