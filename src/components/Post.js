@@ -4,16 +4,18 @@ import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default class Post extends Component{
-  // state = {}
   constructor(props) {
     super(props)
-
+//initial state takes in the amount of likes the post has, and whether or not
+//the like button has been pressed already. if its been pressed, it will disable
+//the like button.
     this.state = {
       likes: props.post.likes,
       likedAlready: false
     }
   }
 
+//event listener for pressing the like button. submits a patch request to the backend.
   handleLikeClick = () => {
     fetch('https://young-waters-32129.herokuapp.com/api/v1/posts/' + this.props.post.id, {
       method: 'PATCH',
@@ -27,6 +29,7 @@ export default class Post extends Component{
     }))
   }
 
+//renders the like button. this button is rerendered whenever it is pushed.
   generateLikeButton = () => {
     if (!this.state.likedAlready) {
       return <Button bsStyle="danger" className="right-list like-button" onClick={this.handleLikeClick}> Likes: {this.props.post.likes} </Button>
@@ -36,6 +39,7 @@ export default class Post extends Component{
     }
   }
 
+//renders an unordered list of associated clothing articles of the post if they exist.
   generateArticles = () => {
     if (this.props.post.articles.length == 0) {
       return null
@@ -50,6 +54,7 @@ export default class Post extends Component{
     }
   }
 
+//renders an unordered list of links to the styles associated with the post if they exist.
   generateStyles = () => {
     if (this.props.renderStyles) {
       if (this.props.post.styles.length == 0) {

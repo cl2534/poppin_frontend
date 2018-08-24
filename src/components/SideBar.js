@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BoxContainer from './BoxContainer.js'
-
+//this is the sidebar on the main page.
 export default class SideBar extends Component {
 
   state = {
@@ -10,17 +10,16 @@ export default class SideBar extends Component {
   componentDidMount() {
     this.fetchRandomStyles()
   }
-
+  //grabs random styles to populate the front page with from the backend
   fetchRandomStyles = () => {
     fetch('https://young-waters-32129.herokuapp.com/api/v1/styles').then(res => res.json()).then(json => {this.setState({
       styles: json.styles
     }); console.log(json.styles);})
   }
 
+  //takes in an integer n, outputs n styles to be given to a BoxContainer.
   giveRandomStyles = (amountOfStyles) => {
-    console.log(this.state.styles);
     if (this.state.styles.length === 0) {
-      console.log('check');
       return []
     }
 

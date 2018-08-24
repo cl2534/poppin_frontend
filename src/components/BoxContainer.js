@@ -1,3 +1,6 @@
+//a container class that contains Box components. The number of generated Boxes
+//it displays is determined using props.
+
 import React, {Component} from 'react';
 import Box from './Box.js';
 import StylePage from './StylePage'
@@ -7,12 +10,14 @@ export default class BoxContainer extends Component {
     super(props)
   }
 
+//click event handler for a box, takes you to the style page.
   handleClick = (style_id) => {
     return(
       <StylePage styleId = {style_id} />
     )
   }
 
+//renders box components contained in its props.
   generateBoxes = () => {
     if (this.props.styles == []) {
       return null

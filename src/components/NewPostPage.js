@@ -15,13 +15,14 @@ export default class NewPostPage extends Component {
       }
   }
 
-
+//every time a new character is entered, its value is stored into the components state.
   handleChange = (event) => {
     this.setState({
       [event.target.name] : event.target.value
     })
   }
 
+//submit event listener. makes a post request to the backend with the information provided.
   handleSubmit = (event) => {
     event.preventDefault()
     fetch('https://young-waters-32129.herokuapp.com/api/v1/posts', {
@@ -33,6 +34,7 @@ export default class NewPostPage extends Component {
     }).then(res => res.json()).then(json => this.props.history.push('/'))
   }
 
+//TODO: make form even prettier.
   render() {
     return (
       <div className="form-container black">

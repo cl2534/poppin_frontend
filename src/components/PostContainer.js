@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import Post from './Post';
+//container class for posts
 
 export default class PostContainer extends Component{
   constructor(props) {
     super(props)
   }
 
+//renders post components. maps through the posts passed in via props.
   renderPosts = () => {
     return this.props.posts.map(post => {
       return (
@@ -23,7 +25,7 @@ export default class PostContainer extends Component{
     )
   }
 }
-
+//default props for the component, so the application doesn't crash if it doesnt have any.
 PostContainer.defaultProps = {
   posts: [],
   renderStyles: true

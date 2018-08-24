@@ -8,10 +8,8 @@ export default class Header extends Component {
     super(props)
   }
 
-  // renderUser = () => {
-  //   this.props.users.map(user=> )
-  // }
-
+//This is the header. Pretty self explanatory. Navbar is a pre built
+//component included in the react-bootstrap library.
   render() {
     return (
       <Navbar className="navbar default fixed-top header">

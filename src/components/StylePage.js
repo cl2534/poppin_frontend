@@ -11,10 +11,13 @@ export default class StylePage extends Component {
     }
   }
 
+//only makes API calls once the component renders. this is to avoid unnecessary backend calls.
   componentDidMount() {
     this.setStyle()
   }
 
+//fetches style/post join table information from the backend to display. takes in a style id and outputs
+//an array of posts associated with the style
   getStylePosts = (style_id) => {
     fetch(`https://young-waters-32129.herokuapp.com/api/v1/styles/` + this.state.style.id).then(res => res.json()).then(json => {
       this.setState({
@@ -23,6 +26,7 @@ export default class StylePage extends Component {
     })
   }
 
+//fetches style information and sets the state to it.
   setStyle = () => {
     let thisPagesStyleId = window.location.href.split('/').slice(-1)
     fetch('https://young-waters-32129.herokuapp.com/api/v1/styles/' + thisPagesStyleId).then(res => res.json()).then(json => {this.setState({

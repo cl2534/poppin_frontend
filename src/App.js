@@ -7,11 +7,14 @@ import NewPostPage from './components/NewPostPage.js';
 import StylePage from './components/StylePage.js';
 class App extends Component {
 
+//This is where the logged in user is stored.
   state = {
     loggedInUserId: 6
   }
 
 
+//This is the main application component. The Routes render different components
+//based on the change in header URL.
   render() {
     return (
       <BrowserRouter>
@@ -30,12 +33,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*
-App - HomePage  - SideBar -BoxContainer - Box
-                - PostContainer - Post - UserBlurb
-    - UserPage  - PostContainer - Post - UserBlurb
-    - StylesPage -BoxContainer - Box
-    - StylePage - PostContainer -Post - UserBlurb
-
-    */

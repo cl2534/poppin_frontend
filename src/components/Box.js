@@ -1,3 +1,6 @@
+//this component is what contains a style. You can click on it to view
+//posts associated with the style!
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
