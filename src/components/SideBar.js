@@ -25,14 +25,12 @@ export default class SideBar extends Component {
     }
 
     let returnArray = []
-    let uniqueReturnArray = []
     let counter = 0
     while (counter < amountOfStyles) {
       returnArray.push(this.state.styles[Math.floor(Math.random() * this.state.styles.length)])
-      uniqueReturnArray = Array.from(new Set(returnArray))
-      counter = uniqueReturnArray.length
+      counter++
     }
-    return uniqueReturnArray
+    return returnArray
   }
 
 

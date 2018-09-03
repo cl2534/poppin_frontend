@@ -7,10 +7,6 @@ export default class Header extends Component {
     super(props)
   }
 
-  // renderUser = () => {
-  //   this.props.users.map(user=> )
-  // }
-
   render() {
     return (<nav className="header">
       <Link className='header-element' to="/"> Home </Link>
