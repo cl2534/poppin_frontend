@@ -12,11 +12,11 @@ export default class User extends Component{
   }
 
   componentDidMount(props) {
-    this.fetchUser(this.props.userId)
+    this.fetchUser()
   }
 
   fetchUser = (user_id) => {
-    fetch(`http://localhost:4000/api/v1/users/${user_id}`).then(res => res.json()).then(res => this.setState({
+    fetch(`https://young-waters-32129.herokuapp.com/api/v1/users/` + this.props.userId).then(res => res.json()).then(res => this.setState({
       currentUser: res.user
     }))
   }

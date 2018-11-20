@@ -6,6 +6,8 @@ export default class AboutMe extends Component {
     super(props)
   }
 
+  //this method checks to see if the associated user has social media attached
+  //to their profile. If they do, its rendered, if not, nothing is displayed.
   generateSocialMedia = () => {
     let returnElements = []
 
@@ -20,7 +22,8 @@ export default class AboutMe extends Component {
     return returnElements
   }
 
-
+  //this Component is displayed in the Userpage, and is a small box that includes
+  //the user's name, about me, and image.
   render() {
     return (
       <div className="about-me">
