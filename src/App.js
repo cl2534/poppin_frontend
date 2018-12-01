@@ -9,7 +9,7 @@ class App extends Component {
 
 //This is where the logged in user is stored.
   state = {
-    loggedInUserId: 6
+    loggedInUserId: 1
   }
 
 
